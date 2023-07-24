@@ -31,12 +31,12 @@ setName("")
         </Modal.Header>
         <Modal.Body>
         <Form onSubmit={handleSubmit}>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
+      <Form.Group className="mb-3" controlId="name">
         <Form.Label>Patient Name</Form.Label>
         <Form.Control 
         type="text" 
         placeholder="Enter name" 
-        onClick={(e) => setName(e.target.value)}
+        onChange={(e) => setName(e.target.value)}
         value={name}
         required
         />
