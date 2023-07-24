@@ -13,14 +13,14 @@ function AddModal({show, handleClose, apps, setApps, drName }) {
   setApps([
     ...apps, 
     {
-    id: apps.length + 1,
+    id: new Date().getTime(),
     patient: name,
     day: date,
     consulted: false,
     doctor: drName,
   },
 ])
-
+setName("")
   handleClose()
  }
   return (
@@ -37,7 +37,9 @@ function AddModal({show, handleClose, apps, setApps, drName }) {
         type="text" 
         placeholder="Enter name" 
         onClick={(e) => setName(e.target.value)}
-        value={name}/>
+        value={name}
+        required
+        />
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="date">
@@ -47,6 +49,7 @@ function AddModal({show, handleClose, apps, setApps, drName }) {
         placeholder="Date" 
         onClick={(e) => setDate(e.target.value)}
         value={date}
+        required
         />
       </Form.Group>
       <div className='text-center'>
@@ -61,7 +64,7 @@ function AddModal({show, handleClose, apps, setApps, drName }) {
         </Modal.Body>
       </Modal>
     </>
-  );
+  )
 }
 
-export default AddModal;
+export default AddModal
